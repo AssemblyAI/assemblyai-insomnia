@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2018-05-21T12:09:11.360Z",
+	"__export_date": "2018-05-21T23:58:10.189Z",
 	"__export_source": "insomnia.desktop.app:v5.16.2",
 	"resources": [
 		{
@@ -20,11 +20,11 @@
 			"data": {
 				"api_token": "your-secret-api-token",
 				"example_audio_url_obama": "https://s3-us-west-2.amazonaws.com/chappy/dnc-2004-speech-8khz_clip.wav",
-				"model_id": 7777,
-				"transcript_id": 3333
+				"model_id": 50647,
+				"transcript_id": 753162
 			},
 			"isPrivate": false,
-			"modified": 1526903709356,
+			"modified": 1526947000743,
 			"name": "New Environment",
 			"parentId": "wrk_b61d615dff6c4a5089408b5c68d7df52",
 			"_type": "environment"
@@ -40,13 +40,10 @@
 		},
 		{
 			"_id": "req_91055011e05c4c14a9880ff8312b5453",
-			"authentication": {
-				"token": "{{ api_token }}",
-				"type": "bearer"
-			},
+			"authentication": {},
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"audio_src_url\": {{ example_audio_url_obama }}\n}"
+				"text": "{\n\t\"audio_src_url\": \"{{ example_audio_url_obama  }}\"\n}"
 			},
 			"created": 1526902675158,
 			"description": "",
@@ -55,12 +52,17 @@
 					"id": "pair_6ec60ac700d443ffb3c1266b880bd22b",
 					"name": "Content-Type",
 					"value": "application/json"
+				},
+				{
+					"id": "pair_bb53175ee1dc4a7e93e15c4adedcf19d",
+					"name": "Authorization",
+					"value": "{{ api_token  }}"
 				}
 			],
 			"isPrivate": false,
 			"metaSortKey": -1526903274211.5,
 			"method": "POST",
-			"modified": 1526903878079,
+			"modified": 1526946743264,
 			"name": "Create transcript from audio url",
 			"parameters": [],
 			"parentId": "wrk_b61d615dff6c4a5089408b5c68d7df52",
@@ -75,7 +77,8 @@
 		{
 			"_id": "req_a3945f98c8f045e6b3576a39e0a86bb8",
 			"authentication": {
-				"token": "{{ token  }}",
+				"disabled": true,
+				"token": "",
 				"type": "bearer"
 			},
 			"body": {
@@ -89,12 +92,17 @@
 					"id": "pair_6ec60ac700d443ffb3c1266b880bd22b",
 					"name": "Content-Type",
 					"value": "application/json"
+				},
+				{
+					"id": "pair_8705d1a50760470da6463be87cedac16",
+					"name": "Authorization",
+					"value": "{{ api_token  }}"
 				}
 			],
 			"isPrivate": false,
 			"metaSortKey": -1526903124435.875,
 			"method": "GET",
-			"modified": 1526903915098,
+			"modified": 1526946872315,
 			"name": "Retrieve transcript",
 			"parameters": [],
 			"parentId": "wrk_b61d615dff6c4a5089408b5c68d7df52",
@@ -109,12 +117,13 @@
 		{
 			"_id": "req_d1968d97d7a04dd18c92e570e1896b38",
 			"authentication": {
-				"token": "{{ api_token }}",
+				"disabled": true,
+				"token": "",
 				"type": "bearer"
 			},
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"audio_src_url\": {{ example_audio_url_obama }},\n  \"model_id\": {{ model_id }}\n}"
+				"text": "{\n\t\"audio_src_url\": \"{{ example_audio_url_obama }}\",\n  \"model_id\": {{ model_id }}\n}"
 			},
 			"created": 1526903341277,
 			"description": "",
@@ -123,12 +132,17 @@
 					"id": "pair_6ec60ac700d443ffb3c1266b880bd22b",
 					"name": "Content-Type",
 					"value": "application/json"
+				},
+				{
+					"id": "pair_e9d62acf16ab4414b8b17168f7a5b22b",
+					"name": "Authorization",
+					"value": "{{ api_token  }}"
 				}
 			],
 			"isPrivate": false,
 			"metaSortKey": -1526902974660.25,
 			"method": "POST",
-			"modified": 1526903896790,
+			"modified": 1526947056974,
 			"name": "Create transcript from audio url with model",
 			"parameters": [],
 			"parentId": "wrk_b61d615dff6c4a5089408b5c68d7df52",
@@ -143,7 +157,8 @@
 		{
 			"_id": "req_4166144de5ea434a8b640c368bea7753",
 			"authentication": {
-				"token": "{{ api_token }}",
+				"disabled": true,
+				"token": "",
 				"type": "bearer"
 			},
 			"body": {
@@ -157,12 +172,17 @@
 					"id": "pair_6ec60ac700d443ffb3c1266b880bd22b",
 					"name": "Content-Type",
 					"value": "application/json"
+				},
+				{
+					"id": "pair_ac4cbb27719a4533b2be82560ca9636e",
+					"name": "Authorization",
+					"value": "{{ api_token  }}"
 				}
 			],
 			"isPrivate": false,
-			"metaSortKey": -1526903049548.0625,
+			"metaSortKey": -1526903030826.1094,
 			"method": "POST",
-			"modified": 1526904100979,
+			"modified": 1526946968242,
 			"name": "Create model from phrases",
 			"parameters": [],
 			"parentId": "wrk_b61d615dff6c4a5089408b5c68d7df52",
@@ -177,7 +197,8 @@
 		{
 			"_id": "req_49e414bf5c2f45d399eb5dff7e735d5a",
 			"authentication": {
-				"token": "{{ token  }}",
+				"disabled": true,
+				"token": "",
 				"type": "bearer"
 			},
 			"body": {
@@ -191,12 +212,17 @@
 					"id": "pair_6ec60ac700d443ffb3c1266b880bd22b",
 					"name": "Content-Type",
 					"value": "application/json"
+				},
+				{
+					"id": "pair_dbe8d5d5136d4039ab9c9125bc48a8b5",
+					"name": "Authorization",
+					"value": "{{ api_token  }}"
 				}
 			],
 			"isPrivate": false,
 			"metaSortKey": -1526903012104.1562,
 			"method": "GET",
-			"modified": 1526904154688,
+			"modified": 1526947019571,
 			"name": "Retrieve model",
 			"parameters": [],
 			"parentId": "wrk_b61d615dff6c4a5089408b5c68d7df52",
@@ -205,7 +231,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "https://api.assemblyai.com/transcript/{{ model_id }}",
+			"url": "https://api.assemblyai.com/model/{{ model_id }}",
 			"_type": "request"
 		}
 	]
