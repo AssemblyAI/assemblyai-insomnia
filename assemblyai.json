@@ -1,0 +1,212 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2018-05-21T12:09:11.360Z",
+	"__export_source": "insomnia.desktop.app:v5.16.2",
+	"resources": [
+		{
+			"_id": "wrk_b61d615dff6c4a5089408b5c68d7df52",
+			"created": 1526902469800,
+			"description": "",
+			"modified": 1526902469800,
+			"name": "AssemblyAI",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_d5d9d91ea4f244e68c8205684819b233",
+			"color": null,
+			"created": 1526902469823,
+			"data": {
+				"api_token": "your-secret-api-token",
+				"example_audio_url_obama": "https://s3-us-west-2.amazonaws.com/chappy/dnc-2004-speech-8khz_clip.wav",
+				"model_id": 7777,
+				"transcript_id": 3333
+			},
+			"isPrivate": false,
+			"modified": 1526903709356,
+			"name": "New Environment",
+			"parentId": "wrk_b61d615dff6c4a5089408b5c68d7df52",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_339eca21f8c44ee49afe0c95ea93cd0c",
+			"cookies": [],
+			"created": 1526902469828,
+			"modified": 1526902469828,
+			"name": "Default Jar",
+			"parentId": "wrk_b61d615dff6c4a5089408b5c68d7df52",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "req_91055011e05c4c14a9880ff8312b5453",
+			"authentication": {
+				"token": "{{ api_token }}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"audio_src_url\": {{ example_audio_url_obama }}\n}"
+			},
+			"created": 1526902675158,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_6ec60ac700d443ffb3c1266b880bd22b",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1526903274211.5,
+			"method": "POST",
+			"modified": 1526903878079,
+			"name": "Create transcript from audio url",
+			"parameters": [],
+			"parentId": "wrk_b61d615dff6c4a5089408b5c68d7df52",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "https://api.assemblyai.com/transcript",
+			"_type": "request"
+		},
+		{
+			"_id": "req_a3945f98c8f045e6b3576a39e0a86bb8",
+			"authentication": {
+				"token": "{{ token  }}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1526903046939,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_6ec60ac700d443ffb3c1266b880bd22b",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1526903124435.875,
+			"method": "GET",
+			"modified": 1526903915098,
+			"name": "Retrieve transcript",
+			"parameters": [],
+			"parentId": "wrk_b61d615dff6c4a5089408b5c68d7df52",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "https://api.assemblyai.com/transcript/{{ transcript_id }}",
+			"_type": "request"
+		},
+		{
+			"_id": "req_d1968d97d7a04dd18c92e570e1896b38",
+			"authentication": {
+				"token": "{{ api_token }}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"audio_src_url\": {{ example_audio_url_obama }},\n  \"model_id\": {{ model_id }}\n}"
+			},
+			"created": 1526903341277,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_6ec60ac700d443ffb3c1266b880bd22b",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1526902974660.25,
+			"method": "POST",
+			"modified": 1526903896790,
+			"name": "Create transcript from audio url with model",
+			"parameters": [],
+			"parentId": "wrk_b61d615dff6c4a5089408b5c68d7df52",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "https://api.assemblyai.com/transcript",
+			"_type": "request"
+		},
+		{
+			"_id": "req_4166144de5ea434a8b640c368bea7753",
+			"authentication": {
+				"token": "{{ api_token }}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"phrases\": [\n\t\t\"hello foobar\",\n\t\t\"goodnight foobar\",\n\t\t\"foobar turn off the lights\",\n\t\t\"foobar turn on the lights\"\n\t]\n}"
+			},
+			"created": 1526903929417,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_6ec60ac700d443ffb3c1266b880bd22b",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1526903049548.0625,
+			"method": "POST",
+			"modified": 1526904100979,
+			"name": "Create model from phrases",
+			"parameters": [],
+			"parentId": "wrk_b61d615dff6c4a5089408b5c68d7df52",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "https://api.assemblyai.com/model",
+			"_type": "request"
+		},
+		{
+			"_id": "req_49e414bf5c2f45d399eb5dff7e735d5a",
+			"authentication": {
+				"token": "{{ token  }}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1526904116468,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_6ec60ac700d443ffb3c1266b880bd22b",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1526903012104.1562,
+			"method": "GET",
+			"modified": 1526904154688,
+			"name": "Retrieve model",
+			"parameters": [],
+			"parentId": "wrk_b61d615dff6c4a5089408b5c68d7df52",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "https://api.assemblyai.com/transcript/{{ model_id }}",
+			"_type": "request"
+		}
+	]
+}
