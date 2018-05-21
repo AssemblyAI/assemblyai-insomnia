@@ -5,6 +5,6 @@ Insomnia REST client workspace for AssemblyAI
 ## Usage
 
 - Install [Insomnia](https://insomnia.rest/)
-- Clone this repo
-- Import `assemblyai.json`
-- Replace base environment `api_token`
+- Download [assemblyai-insomnia.json](https://raw.githubusercontent.com/AssemblyAI/assemblyai-insomnia/master/assemblyai-insomnia.json)
+- Import workspace from file.
+- Replace Base Environment `api_token`.
